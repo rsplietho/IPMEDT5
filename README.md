@@ -11,5 +11,7 @@ You need to have a MySQL database setup with the following settings:
 - User with permissions for the database and a chosen password
     - The username and password needs to be set in the .env
 
+- run `php artisan migrate --seed`
+
 ### .env
 The envfile needs to be configured, make a copy of 1.env.example called .env and set your MySQL settings.
