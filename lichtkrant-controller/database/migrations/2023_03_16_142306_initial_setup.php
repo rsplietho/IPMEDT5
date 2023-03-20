@@ -13,7 +13,7 @@ class InitialSetup extends Migration
      */
     public function up()
     {
-        $this->createPresetsTable();
+        $this->createTextPresetsTable();
 
 		$this->createColourPresetsTable();
 
@@ -27,17 +27,17 @@ class InitialSetup extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('presets');
+        Schema::dropIfExists('textPresets');
 		Schema::dropIfExists('colourPresets');
 		Schema::dropIfExists('current');
     }
 
     private function createTextPresetsTable() {
         Schema::create('textPresets', function(Blueprint $table) {
-			$table->increments('id');
+			$table->id();
 			$table->string('text');
 			$table->char('colour', 6);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->boolean('private');
 
 			$table->timestamps();
@@ -47,9 +47,9 @@ class InitialSetup extends Migration
 
     private function createColourPresetsTable() {
         Schema::create('colourPresets', function(Blueprint $table) {
-			$table->increments('id');
+			$table->id();
 			$table->char('colour', 6);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->references('id')->on('users');
 
 			$table->timestamps();
 			$table->softDeletes();
@@ -58,7 +58,7 @@ class InitialSetup extends Migration
 
     private function createCurrentTable() {
         Schema::create('current', function(Blueprint $table) {
-			$table->increments('id');
+			$table->id();
             $table->string('text');
 			$table->char('colour', 6);
 
