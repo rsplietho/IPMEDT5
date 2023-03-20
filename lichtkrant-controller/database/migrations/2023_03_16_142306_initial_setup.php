@@ -37,7 +37,7 @@ class InitialSetup extends Migration
 			$table->id();
 			$table->string('text');
 			$table->char('colour', 6);
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->nullable()->references('id')->on('users');
             $table->boolean('private');
 
 			$table->timestamps();
