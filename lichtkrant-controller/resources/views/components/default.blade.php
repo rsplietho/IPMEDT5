@@ -9,6 +9,7 @@
 </head>
 <body>
     @extends('components/navbar')
+    @extends('components/accordion')
     <main>
         @yield("content")
     </main>
