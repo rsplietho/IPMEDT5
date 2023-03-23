@@ -1,5 +1,5 @@
 @extends('/components/default')
 
 @section('content')
-    <p>index pagina</p>
+    <h1>Welkom {{auth()->user()->some_column}}</h1>
 @endsection
