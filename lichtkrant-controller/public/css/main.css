@@ -1,13 +1,24 @@
-<<<<<<< Updated upstream
 *{
     padding: 0;
     margin: 0;
 }
 
 nav{
+    height: 10vh;
+    background-color: #181212;
+    line-height: 10vh;
     top: 0;
-=======
-html{
-    background-color: red;
->>>>>>> Stashed changes
+    position: fixed;
+    width: 100vw;
 }
+
+nav > a > img{
+    height: 100%;
+    vertical-align: middle;
+}
+
+nav > .user{
+    position: absolute;
+    right: 5px;
+} 
+
