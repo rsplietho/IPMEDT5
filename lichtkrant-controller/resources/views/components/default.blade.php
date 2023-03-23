@@ -9,8 +9,6 @@
 </head>
 <body>
     @extends('components/navbar')
-    <main>
-        @yield("content")
-    </main>
+    @yield("content")
 </body>
 </html>
