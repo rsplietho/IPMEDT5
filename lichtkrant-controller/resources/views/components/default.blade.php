@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    @yield("content")
+    @extends('components/navbar')
+    <main>
+        @yield("content")
+    </main>
 </body>
 </html>
