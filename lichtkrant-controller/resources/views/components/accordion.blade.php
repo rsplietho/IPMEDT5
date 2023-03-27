@@ -16,19 +16,19 @@
         <label class="box-close" for="acc-close"></label>
         <div class="box-content">Add the class 'arrows' to nav.accordion to add dropdown arrows.</div>
     </section>
-    
+
     <input type="radio" name="accordion" id="cb3" />
     <section class="box">
         <label class="box-title" for="cb3">Kleur</label>
         <label class="box-close" for="acc-close"></label>
         <div class="box-content">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque finibus tristique nisi, maximus ullamcorper ante finibus eget.</div>
-    </section>   
-    
+    </section>
+
     <input type="radio" name="accordion" id="cb4" />
     <section class="box">
         <label class="box-title" for="cb4">Mode</label>
         <label class="box-close" for="acc-close"></label>
         <div class="box-content">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque finibus tristique nisi, maximus ullamcorper ante finibus eget.</div>
-    </section>   
+    </section>
     <input type="radio" name="accordion" id="acc-close" />
 </nav>
