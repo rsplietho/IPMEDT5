@@ -1,5 +1,5 @@
 :root{
-    --prievewColor: #ffffff;
+    --previewColor: #ffffff;
 }
 
 * {
@@ -10,10 +10,12 @@
 }
 
 nav{
+    padding: 1rem;
     height: 10vh;
     background-color: #181212;
     line-height: 10vh;
     top: 0;
+    grid-area: nav;
 }
 body {
     display: grid;
@@ -28,20 +30,15 @@ body {
     "accordion";
 }
 
-nav{
-    grid-area: nav;
-}
-
-.preview{
-    grid-area: preview;
-}
-
 .accordion {
+    height: 80vh;
     grid-area: accordion;
 }
+
 .accordion input {
     display: none;
 }
+
 .box {
 
     position: relative;
@@ -130,13 +127,15 @@ input:checked + section.box .box-title:before {
 
 /* styling preview */
 .preview{
+    height: 10vh;
     width: 100vw;
+    grid-area: preview;
     }
 
 .preview > p{
     width: 100vw;
-    padding: 1rem; width: 95% ;
+    padding: 1rem;
     background-color: black;
-    color: var(--prievewColor);
+    color: var(--previewColor);
     font-family: 'led_dot_matrix', sans-serif;
 }
