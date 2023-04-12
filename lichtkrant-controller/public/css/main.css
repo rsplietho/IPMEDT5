@@ -28,6 +28,7 @@ body {
     "nav"
     "preview"
     "accordion";
+    height: 100vh;
 }
 
 .accordion {
