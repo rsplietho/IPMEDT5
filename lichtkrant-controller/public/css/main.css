@@ -18,7 +18,6 @@ nav{
 body {
     display: grid;
     grid-template-columns: 1fr;
-    height: 100vh;
     width: 100vw;
     margin: 0;
     background: #f2f2f2;
@@ -39,13 +38,12 @@ nav{
 
 .accordion {
     grid-area: accordion;
-    margin: auto;
 }
 .accordion input {
     display: none;
 }
 .box {
-    margin-top: 20px;
+
     position: relative;
     background: white;
     height: 64px;
@@ -53,8 +51,6 @@ nav{
 }
 .box::before {
     content: '';
-    position: absolute;
-    display: block;
     top: 0;
     bottom: 0;
     left: 0;
@@ -97,7 +93,6 @@ header .box-title {
 .box-close {
     position: absolute;
     height: 64px;
-
     top: 0;
     left: 0;
     cursor: pointer;
@@ -105,7 +100,6 @@ header .box-title {
 }
 input:checked + .box {
     height: auto;
-    margin: 16px 0;
     box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
 }
 input:checked + .box .box-title {

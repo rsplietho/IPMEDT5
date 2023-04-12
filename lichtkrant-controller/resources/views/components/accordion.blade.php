@@ -1,4 +1,4 @@
-<nav class="accordion arrows">
+<div class="accordion arrows">
     <header class="box">
         <label for="acc-close" class="box-title">Lichtkrant index</label>
     </header>
@@ -31,4 +31,4 @@
         <div class="box-content">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque finibus tristique nisi, maximus ullamcorper ante finibus eget.</div>
     </section>
     <input type="radio" name="accordion" id="acc-close" />
-</nav>
+</div>
