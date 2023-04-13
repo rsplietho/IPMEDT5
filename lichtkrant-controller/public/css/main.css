@@ -36,14 +36,14 @@ body {
     grid-area: accordion;
 }
 
-.accordion input {
+.accordion input[type="radio"] {
     display: none;
 }
 
 .box {
     position: relative;
     background: white;
-    height: 64px;
+
     transition: all .15s ease-in-out;
 }
 
@@ -139,11 +139,5 @@ input:checked + section.box .box-title:before {
     background-color: black;
     color: var(--previewColor);
     font-family: 'led_dot_matrix', sans-serif;
-}
-
-/* test code */
-.textInput{
-    background-color: red;
-    height: 100px;
 }
 

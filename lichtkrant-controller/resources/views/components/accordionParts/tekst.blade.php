@@ -3,7 +3,7 @@
 <div class="box-content">
     <form method="POST" action="/updateText">
         @csrf
-        <input class="textInput" type="text" name="text">
+        <input class="saveInput" type="text" name="text">
         <button type="submit">Save</button>
     </form>
 </div>
