@@ -19,6 +19,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('Omni - Dashboard');
 
+Route::get('/', function () {
+    return view('index');
+});
+
 Route::get('/get_text', [DataController::class, 'showCurrentData']);
 
 require __DIR__.'/auth.php';

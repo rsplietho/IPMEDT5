@@ -41,12 +41,12 @@ body {
 }
 
 .box {
-
     position: relative;
     background: white;
     height: 64px;
     transition: all .15s ease-in-out;
 }
+
 .box::before {
     content: '';
     top: 0;
