@@ -24,7 +24,8 @@ Route::get('/', function () {
 });
 
 Route::get('/', [\App\Http\Controllers\DataController::class, 'index']);
-
+Route::post('/updateText', [\App\Http\Controllers\DataController::class, 'updateText']);
+Route::post('/updateColour', [\App\Http\Controllers\DataController::class, 'updateColour']);
 
 Route::get('/get_text', [DataController::class, 'showCurrentData']);
 
