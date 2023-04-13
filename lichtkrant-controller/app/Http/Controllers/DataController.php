@@ -12,4 +12,10 @@ class DataController extends Controller
         return $data;
     }
     
+    public function index(){
+        $textPresets = DB::table('textPresets')->get();
+        return view('index', ['textPresets' => $textPresets]);
+    }
+
+    
 }

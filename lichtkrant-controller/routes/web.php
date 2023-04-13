@@ -23,6 +23,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/', [\App\Http\Controllers\DataController::class, 'index']);
+
+
 Route::get('/get_text', [DataController::class, 'showCurrentData']);
 
 require __DIR__.'/auth.php';
