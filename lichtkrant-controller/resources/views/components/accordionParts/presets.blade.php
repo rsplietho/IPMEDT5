@@ -2,7 +2,9 @@
 <label class="box-close" for="acc-close"></label>
 <div class="box-content">
     @foreach($textPresets as $preset)
-        <p>{{ $preset->text }}</p>
+        @if($preset->user_id == Auth::id())
+            <p>{{ $preset->text }}</p>
+        @endif
     @endforeach
 </div>
 

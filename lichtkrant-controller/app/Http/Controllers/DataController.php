@@ -41,17 +41,19 @@ public function saveCurrentDataToTextPresets(Request $request)
     $current = DB::table('current')->first();
     $user_id = Auth::id();
 
+    $id = $request->has('preset1') ? 1 : 2; // check which button was pressed
+
     if ($current) {
         $textPreset = DB::table('textPresets')
-            ->where('id', 1)
+            ->where('id', $id)
             ->where('user_id', $user_id)
             ->first();
 
-            TextPreset::where('id', 1)->delete();
+        TextPreset::where('id', $id)->delete();
 
         if ($textPreset) {
             DB::table('textPresets')
-                ->where('id', 1)
+                ->where('id', $id)
                 ->where('user_id', $user_id)
                 ->update([
                     'text' => $current->text,
@@ -59,7 +61,7 @@ public function saveCurrentDataToTextPresets(Request $request)
                 ]);
         } else {
             DB::table('textPresets')->insert([
-                'id' => 1,
+                'id' => $id,
                 'text' => $current->text,
                 'colour' => $current->colour,
                 'user_id' => $user_id,
@@ -74,5 +76,6 @@ public function saveCurrentDataToTextPresets(Request $request)
         return redirect('/')->with('error', 'No data to save!');
     }
 }
+
     
 }
