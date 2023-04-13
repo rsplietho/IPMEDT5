@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Current;
+use Illuminate\Support\Facades\Auth;
+use App\Models\TextPreset;
+
 
 
 class DataController extends Controller
@@ -31,6 +34,45 @@ class DataController extends Controller
         $current->colour = $request->input('colour');
         $current->save();
     return redirect('/')->with('success', 'Colour saved successfully!');
+}
+
+public function saveCurrentDataToTextPresets(Request $request)
+{
+    $current = DB::table('current')->first();
+    $user_id = Auth::id();
+
+    if ($current) {
+        $textPreset = DB::table('textPresets')
+            ->where('id', 1)
+            ->where('user_id', $user_id)
+            ->first();
+
+            TextPreset::where('id', 1)->delete();
+
+        if ($textPreset) {
+            DB::table('textPresets')
+                ->where('id', 1)
+                ->where('user_id', $user_id)
+                ->update([
+                    'text' => $current->text,
+                    'colour' => $current->colour
+                ]);
+        } else {
+            DB::table('textPresets')->insert([
+                'id' => 1,
+                'text' => $current->text,
+                'colour' => $current->colour,
+                'user_id' => $user_id,
+                'private' => false,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
+
+        return redirect('/')->with('success', 'Data saved successfully!');
+    } else {
+        return redirect('/')->with('error', 'No data to save!');
+    }
 }
     
 }

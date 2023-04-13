@@ -66,4 +66,8 @@ class InitialSetup extends Migration
 			$table->softDeletes();
 		});
     }
+
+
+
+
 }
