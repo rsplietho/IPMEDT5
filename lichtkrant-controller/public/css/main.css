@@ -140,3 +140,10 @@ input:checked + section.box .box-title:before {
     color: var(--previewColor);
     font-family: 'led_dot_matrix', sans-serif;
 }
+
+/* test code */
+.textInput{
+    background-color: red;
+    height: 100px;
+}
+
