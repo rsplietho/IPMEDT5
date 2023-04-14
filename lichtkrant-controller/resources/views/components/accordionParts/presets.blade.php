@@ -3,8 +3,12 @@
 <div class="box-content">
     @foreach($textPresets as $preset)
         @if($preset->user_id == Auth::id())
-            <p>{{ $preset->text }}</p>
+        <form class="presetForm" method="POST" action="{{ route('updateCurrent', $preset->id) }}">
+            @csrf
+            <button class="presetButton" style="color: #{{ $preset->colour }}" type="submit" name="text" value="{{ $preset->text }}">{{ $preset->text }}</button>
+        </form>
         @endif
     @endforeach
 </div>
+
 

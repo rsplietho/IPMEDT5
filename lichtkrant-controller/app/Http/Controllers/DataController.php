@@ -37,46 +37,77 @@ class DataController extends Controller
     }
     
 
-public function saveCurrentDataToTextPresets(Request $request)
-{
-    $current = DB::table('current')->first();
-    $user_id = Auth::id();
-
-    $id = $request->has('preset1') ? 1 : 2; // check which button was pressed
-
-    if ($current) {
-        $textPreset = DB::table('textPresets')
-            ->where('id', $id)
-            ->where('user_id', $user_id)
-            ->first();
-
+    public function saveCurrentDataToTextPresets(Request $request)
+    {
+        $current = DB::table('current')->first();
+        $user_id = Auth::id();
+    
+        $id = 0;
+    
+        if ($request->has('preset1')) {
+            $id = 1;
+        } else if ($request->has('preset2')) {
+            $id = 2;
+        } else if ($request->has('preset3')) {
+            $id = 3;
+        } else if ($request->has('preset4')) {
+            $id = 4;
+        }
+    
         TextPreset::where('id', $id)->delete();
 
-        if ($textPreset) {
-            DB::table('textPresets')
-                ->where('id', $id)
-                ->where('user_id', $user_id)
-                ->update([
-                    'text' => $current->text,
-                    'colour' => $current->colour
-                ]);
+        if ($id > 0) {
+            if ($current) {
+                $textPreset = DB::table('textPresets')
+                    ->where('id', $id)
+                    ->where('user_id', $user_id)
+                    ->first();
+    
+                
+    
+                if ($textPreset) {
+                    DB::table('textPresets')
+                        ->where('id', $id)
+                        ->where('user_id', $user_id)
+                        ->update([
+                            'text' => $current->text,
+                            'colour' => $current->colour
+                        ]);
+                } else {
+                    DB::table('textPresets')->insert([
+                        'id' => $id,
+                        'text' => $current->text,
+                        'colour' => $current->colour,
+                        'user_id' => $user_id,
+                        'private' => false,
+                        'created_at' => now(),
+                        'updated_at' => now()
+                    ]);
+                }
+    
+                return redirect('/')->with('success', 'Data saved successfully!');
+            } else {
+                return redirect('/')->with('error', 'No data to save!');
+            }
         } else {
-            DB::table('textPresets')->insert([
-                'id' => $id,
-                'text' => $current->text,
-                'colour' => $current->colour,
-                'user_id' => $user_id,
-                'private' => false,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
+            return redirect('/')->with('error', 'Invalid request!');
         }
-
-        return redirect('/')->with('success', 'Data saved successfully!');
-    } else {
-        return redirect('/')->with('error', 'No data to save!');
     }
-}
+    
+    public function updateCurrent($id)
+    {
+        $preset = TextPreset::find($id);
+        $current = Current::find(1);
+        
+        $current->text = $preset->text;
+        $current->colour = $preset->colour;
+        
+        $current->save();
+        
+        return redirect('/')->with('success', 'Text and colour saved successfully!');
+    }
+    
+    
 
     
 }

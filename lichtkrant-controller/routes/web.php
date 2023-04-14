@@ -27,6 +27,9 @@ Route::get('/', [\App\Http\Controllers\DataController::class, 'index']);
 Route::post('/updateText', [\App\Http\Controllers\DataController::class, 'updateText']);
 Route::post('/updateColour', [\App\Http\Controllers\DataController::class, 'updateColour']);
 Route::post('//saveCurrentDataToTextPresets', [\App\Http\Controllers\DataController::class, 'saveCurrentDataToTextPresets']);
+Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent');
+
+
 
 
 Route::get('/get_text', [DataController::class, 'showCurrentData']);
