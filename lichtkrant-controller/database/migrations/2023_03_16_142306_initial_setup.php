@@ -59,11 +59,15 @@ class InitialSetup extends Migration
     private function createCurrentTable() {
         Schema::create('current', function(Blueprint $table) {
 			$table->id();
-            $table->string('text');
+            $table->string('text')->nullable();
 			$table->char('colour', 6);
 
 			$table->timestamps();
 			$table->softDeletes();
 		});
     }
+
+
+
+
 }

@@ -1,5 +1,6 @@
 @extends('/components/default')
 
 @section('content')
-    @extends('components/accordion')
+    @include('components/preview')
+    @include('components/accordion')
 @endsection
