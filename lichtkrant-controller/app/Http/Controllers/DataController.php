@@ -33,8 +33,9 @@ class DataController extends Controller
         $current = current::find(1);
         $current->colour = $request->input('colour');
         $current->save();
-    return redirect('/')->with('success', 'Colour saved successfully!');
-}
+        return redirect('/')->with('success', 'Colour saved successfully!');
+    }
+    
 
 public function saveCurrentDataToTextPresets(Request $request)
 {
