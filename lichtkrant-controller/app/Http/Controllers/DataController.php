@@ -18,9 +18,17 @@ class DataController extends Controller
     }
     
     public function getColour() {
-        $data = DB::table('current')->pluck('colour')->implode(',');
-        return $data;
+        $rgb888 = DB::table('current')->pluck('colour')->implode(',');
+        $r = hexdec(substr($rgb888, 0, 2));
+        $g = hexdec(substr($rgb888, 2, 2));
+        $b = hexdec(substr($rgb888, 4, 2));
+        $r5 = $r >> 3;
+        $g6 = $g >> 2;
+        $b5 = $b >> 3;
+        $rgb565 = ($r5 << 11) | ($g6 << 5) | $b5;
+        return '0x'.sprintf('%04X', $rgb565);
     }
+    
     
     
     
