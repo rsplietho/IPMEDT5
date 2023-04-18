@@ -32,7 +32,8 @@ Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->n
 
 
 
-Route::get('/get_text', [DataController::class, 'showCurrentData']);
+Route::get('/get_text', [DataController::class, 'getText']);
+Route::get('/get_colour', [DataController::class, 'getColour']);
 
 require __DIR__.'/auth.php';
 

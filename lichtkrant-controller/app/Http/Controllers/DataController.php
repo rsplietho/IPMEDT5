@@ -12,10 +12,17 @@ use App\Models\TextPreset;
 
 class DataController extends Controller
 {
-    public function showCurrentData() {
-        $data = DB::table('current')->get();
+    public function getText() {
+        $data = DB::table('current')->pluck('text')->implode(',');
         return $data;
     }
+    
+    public function getColour() {
+        $data = DB::table('current')->pluck('colour')->implode(',');
+        return $data;
+    }
+    
+    
     
     public function index(){
         $textPresets = DB::table('textPresets')->get();
