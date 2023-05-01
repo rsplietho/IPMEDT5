@@ -20,14 +20,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('Omni - Dashboard');
 
 Route::get('/', function () {
-    return view('index');
+    if (Auth::check()) {
+        return view('index');
+    } else {
+        return redirect('/login');
+    }
 });
+
 
 Route::get('/', [\App\Http\Controllers\DataController::class, 'index']);
 Route::post('/updateText', [\App\Http\Controllers\DataController::class, 'updateText']);
 Route::post('/updateColour', [\App\Http\Controllers\DataController::class, 'updateColour']);
 Route::post('//saveCurrentDataToTextPresets', [\App\Http\Controllers\DataController::class, 'saveCurrentDataToTextPresets']);
 Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent');
+
 
 
 
