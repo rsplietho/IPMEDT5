@@ -45,8 +45,14 @@ class DataController extends Controller
     }
 
     public function updateColour(Request $request){
+        $colour = $request->input('colour');
+        if(!preg_match('/^#[a-f0-9]{6}$/i', $colour) && !preg_match('/^[a-f0-9]{6}$/i', $colour)) {
+            abort(400, 'Geen geldige HEX-kleur: '.$colour);
+        } elseif(preg_match('/^#[a-f0-9]{6}$/i', $colour)) {
+            $colour = str_replace('#', '', $colour);;
+        }
         $current = current::find(1);
-        $current->colour = $request->input('colour');
+        $current->colour = $colour;
         $current->save();
         return redirect('/')->with('success', 'Colour saved successfully!');
     }

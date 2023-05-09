@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'email' => 'admin@admin.nl',
             'password' => Hash::make('admin'),
+            'admin' => true,
         ]);
 
         DB::table('textPresets')->insert([

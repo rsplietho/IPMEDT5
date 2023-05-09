@@ -33,7 +33,6 @@ nav > a{
     text-decoration: none;
 }
 
-<<<<<<< Updated upstream
 .preview{
     grid-area: preview;
     height: 20vh;
@@ -48,23 +47,12 @@ nav > a{
 }
 
 nav, .preview, .accordion{
-=======
-body {
->>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-<<<<<<< Updated upstream
 input[type="radio"]{
-=======
-.accordion {
-    margin: auto;
-    width: 100vw;
-}
-.accordion input {
->>>>>>> Stashed changes
     display: none;
 }
 
@@ -78,10 +66,24 @@ input[type="radio"]{
 }
 
 .colourButton{
-    width: 20vw;
-    height: 20vw;
+    width: 5em;
+    height: 5em;
     border: none;
     border-radius: 10px;
+}
+
+.colour-input {
+    width: 5em;
+}
+
+.colourlabel {
+    padding: 0 !important;
+    color: white;
+    margin: 0 !important;
+}
+
+.coloursubmit {
+    width: 5em;
 }
 
 .box {

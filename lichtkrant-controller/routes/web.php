@@ -15,7 +15,7 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\DataController::class, 'index'])->middleware('auth');;
+Route::get('/', [\App\Http\Controllers\DataController::class, 'index'])->middleware('auth')->name('index');;
 Route::post('/updateText', [\App\Http\Controllers\DataController::class, 'updateText'])->middleware('auth');;
 Route::post('/updateColour', [\App\Http\Controllers\DataController::class, 'updateColour'])->middleware('auth');;
 Route::post('//saveCurrentDataToTextPresets', [\App\Http\Controllers\DataController::class, 'saveCurrentDataToTextPresets'])->middleware('auth');;
