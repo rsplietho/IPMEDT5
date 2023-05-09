@@ -15,29 +15,11 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('Omni - Dashboard');
-
-Route::get('/', function () {
-    if (Auth::check()) {
-        return view('index');
-    } else {
-        return redirect('/login');
-    }
-});
-
-
-
-Route::get('/', [\App\Http\Controllers\DataController::class, 'index']);
-Route::post('/updateText', [\App\Http\Controllers\DataController::class, 'updateText']);
-Route::post('/updateColour', [\App\Http\Controllers\DataController::class, 'updateColour']);
-Route::post('//saveCurrentDataToTextPresets', [\App\Http\Controllers\DataController::class, 'saveCurrentDataToTextPresets']);
-Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent');
-
-
-
-
+Route::get('/', [\App\Http\Controllers\DataController::class, 'index'])->middleware('auth');;
+Route::post('/updateText', [\App\Http\Controllers\DataController::class, 'updateText'])->middleware('auth');;
+Route::post('/updateColour', [\App\Http\Controllers\DataController::class, 'updateColour'])->middleware('auth');;
+Route::post('//saveCurrentDataToTextPresets', [\App\Http\Controllers\DataController::class, 'saveCurrentDataToTextPresets'])->middleware('auth');;
+Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent')->middleware('auth');;
 
 Route::get('/get_text', [DataController::class, 'getText']);
 Route::get('/get_colour', [DataController::class, 'getColour']);
