@@ -66,6 +66,7 @@
 	<div class="container">
 		<h2>Register</h2>
         <form method="POST" action="{{ route('register') }}">
+			@csrf
 			<label for="username" :value="__('Name')">Name</label>
 			<input id="name"  type="text" name="name" :value="old('name')" required autofocus />
 

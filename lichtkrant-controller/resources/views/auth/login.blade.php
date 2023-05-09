@@ -13,6 +13,7 @@
 	<div class="container">
 		<h2>Login</h2>
 		<form>
+            @csrf
             <label for="username" :value="__('Username')">Username</label>
                 <input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
 
