@@ -10,8 +10,7 @@
 </head>
 <body>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<h1>Lichtkrant</h1>
 
 	<div class="container">
 		<h2>Registreer een nieuwe gebruiker</h2>

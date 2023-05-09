@@ -14,6 +14,6 @@ class PreviewController extends Controller
 
     public static function previewColour() {
         $colour = Current::first()->value('colour');
-        return $colour;
+        return '#' . $colour;
     }
 }

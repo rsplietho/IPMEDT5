@@ -22,14 +22,8 @@ Route::post('/updateColour', [DataController::class, 'updateColour'])->middlewar
 Route::post('//saveCurrentDataToTextPresets', [DataController::class, 'saveCurrentDataToTextPresets'])->middleware('auth');
 Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent')->middleware('auth');
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/', [\App\Http\Controllers\DataController::class, 'index']);
-
-
-Route::get('/get_text', [DataController::class, 'showCurrentData']);
+Route::get('/get_text', [DataController::class, 'getText']);
+Route::get('/get_colour', [DataController::class, 'getColour']);
 
 Route::get('/user', function(){return view('user');})->middleware('auth')->name('user');
 Route::get('/user/edit/name', [UserController::class, 'resetName'])->middleware('auth')->name('user.edit.name');

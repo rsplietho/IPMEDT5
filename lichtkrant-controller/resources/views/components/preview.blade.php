@@ -1,4 +1,5 @@
 <div class="preview">
-    <p>{{App\Http\Controllers\PreviewController::previewText()}}</p>
+    <p style="color: {{ App\Http\Controllers\PreviewController::previewColour() }}">{{App\Http\Controllers\PreviewController::previewText()}}</p>
+
 </div>
 

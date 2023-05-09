@@ -11,7 +11,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    // Registering disabled to prevent malicious use
+     //Registering disabled to prevent malicious use
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
