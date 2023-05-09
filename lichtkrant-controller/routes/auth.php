@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->group(function () {
     // Registering disabled to prevent malicious use
 
-    // Route::get('register', [RegisteredUserController::class, 'create'])
-    //             ->name('register');
-
-    // Route::post('register', [RegisteredUserController::class, 'store']);
-
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
 
@@ -37,6 +32,14 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('createuser', [RegisteredUserController::class, 'create'])
+    ->middleware('admin')
+             ->name('createuser');
+
+    Route::post('register', [RegisteredUserController::class, 'store'])
+        ->middleware('admin')
+            ->name('postuser');
+
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
                 ->name('verification.notice');
 

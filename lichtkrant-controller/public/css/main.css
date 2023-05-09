@@ -31,8 +31,25 @@ body {
     height: 100vh;
 }
 
-.accordion {
-    height: 80vh;
+nav{
+    grid-area: nav;
+    height: 10vh;
+    background-color: var(--blackDark);
+}
+
+nav > a{
+    color: var(--textLight);
+    text-decoration: none;
+}
+
+.preview{
+    grid-area: preview;
+    height: 20vh;
+    text-align: center;
+    background-color: var(--blackDark);
+}
+
+.accordion{
     grid-area: accordion;
 }
 
@@ -139,4 +156,75 @@ input:checked + section.box .box-title:before {
     background-color: black;
     color: var(--previewColor);
     font-family: 'led_dot_matrix', sans-serif;
+}
+
+.previewButtons{
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+}
+
+.previewButtons > form > button{
+    width: 20vw;
+    height: 15vw;
+    background-color: var(--backround);
+    border: none;
+    border-radius: 10px;
+    color: var(--textLight);
+}
+
+/* login styling */
+
+.body_login {
+    font-family: Arial, sans-serif;
+    background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701862770.jpg");
+}
+.body_login  .container {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+.body_login  h2 {
+    text-align: center;
+    color: #333;
+}
+.body_login  h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.body_login  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+.body_login  input[type=text], .body_login  input[type=password] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.body_login  button {
+    background-color: #15616D;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.body_login  button:hover {
+    background-color: white;
+    color: #15616D;
+    outline: 2px solid #15616D;
+}
+@media only screen and (max-width: 600px) {
+    .body_login  .container {
+        max-width: 300px;
+    }
 }

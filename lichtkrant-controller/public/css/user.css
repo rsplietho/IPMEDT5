@@ -1,0 +1,21 @@
+h1, h2, h3, p {
+    padding: .5em;
+    text-align: center;
+}
+.button {
+    background-color: #15346d;
+    color: #fff;
+    padding: 1em 2em;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    size: 75%;
+    margin: auto;
+    margin-top: 1em;
+}
+.logout {
+    background-color: #ff544b;
+}
