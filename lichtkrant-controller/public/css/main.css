@@ -33,6 +33,7 @@ nav > a{
     text-decoration: none;
 }
 
+<<<<<<< Updated upstream
 .preview{
     grid-area: preview;
     height: 20vh;
@@ -47,12 +48,23 @@ nav > a{
 }
 
 nav, .preview, .accordion{
+=======
+body {
+>>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+<<<<<<< Updated upstream
 input[type="radio"]{
+=======
+.accordion {
+    margin: auto;
+    width: 100vw;
+}
+.accordion input {
+>>>>>>> Stashed changes
     display: none;
 }
 
