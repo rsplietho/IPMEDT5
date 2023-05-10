@@ -4,9 +4,12 @@
                 <form method="POST" action="{{ route('setMode') }}">
                         <label for="mode">Kies een modus:</label>
                         <select id="mode" name="mode">
-                                {{-- {{$modes = App\Models\Mode::all()}} --}}
                                 @foreach (App\Models\Mode::all() as $mode)
-                                        <option value="{{$mode->id}}">{{$mode->name}}</option>
+                                        <option value="{{$mode->id}}" 
+                                                @if(App\Models\Current::find(1)->mode == $mode->id)
+                                                selected
+                                                @endif
+                                                >{{$mode->name}}</option>
                                 @endforeach
                         </select>
                         <button type="submit" class="coloursubmit">Save</button>

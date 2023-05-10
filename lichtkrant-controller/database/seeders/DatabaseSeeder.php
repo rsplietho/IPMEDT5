@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         DB::table('current')->insert([
             'text' => 'Hello World!',
             'colour' => '4AF626',
-            'mode' => 0,
+            'mode' => 1,
         ]);
     }
 }

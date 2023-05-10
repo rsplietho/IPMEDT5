@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
-use \App\Http\Controllers\UserController;
-use \App\Http\Controllers\ModeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ModeController;
+use App\Http\Controllers\WeatherController;
 
 
 /*
@@ -40,6 +41,8 @@ Route::post('/user/edit/email/submit', [UserController::class, 'storeEmail'])->m
 
 Route::get('/user/edit/password', [UserController::class, 'resetPassword'])->middleware('auth')->name('user.edit.password');
 Route::post('/user/edit/password/submit', [UserController::class, 'storePassword'])->middleware('auth')->name('editPassword');
+
+Route::post('/weather', [WeatherController::class, 'store']);
 
 
 require __DIR__.'/auth.php';
