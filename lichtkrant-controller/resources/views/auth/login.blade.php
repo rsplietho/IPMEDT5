@@ -17,6 +17,11 @@
 		<h2>Login</h2>
 		<form>
             @csrf
+            @if($errors->any())
+                @foreach ($errors->all() as $error)
+                    <p class="error">{{ $error }}</p>
+                @endforeach
+            @endif
             <label for="username" :value="__('Username')">Gebruikersnaam</label>
                 <input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
 

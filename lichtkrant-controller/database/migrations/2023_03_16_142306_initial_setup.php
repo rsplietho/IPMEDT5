@@ -17,6 +17,8 @@ class InitialSetup extends Migration
 
 		$this->createColourPresetsTable();
 
+        $this->createModesTable();
+
 		$this->createCurrentTable();
     }
 
@@ -29,6 +31,7 @@ class InitialSetup extends Migration
     {
         Schema::dropIfExists('textPresets');
 		Schema::dropIfExists('colourPresets');
+        Schema::dropIfExists('modes');
 		Schema::dropIfExists('current');
     }
 
@@ -56,11 +59,20 @@ class InitialSetup extends Migration
 		});
     }
 
+    private function createModesTable() {
+        Schema::create('modes', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+    }
+
     private function createCurrentTable() {
         Schema::create('current', function(Blueprint $table) {
 			$table->id();
             $table->string('text')->nullable();
 			$table->char('colour', 6);
+            $table->foreignId('mode')->references('id')->on('modes');
 
 			$table->timestamps();
 			$table->softDeletes();

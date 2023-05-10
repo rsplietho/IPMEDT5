@@ -11,6 +11,11 @@
 <body>
     <h1>Lichtkrant</h1>
 	<div class="container">
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <p class="error">{{ $error }}</p>
+            @endforeach
+        @endif
         @yield("content")
         <a class="button" href="{{ route('user')}}">Ga terug</a>
 	</div>

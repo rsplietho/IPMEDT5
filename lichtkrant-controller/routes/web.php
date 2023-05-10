@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\ModeController;
 
 
 /*
@@ -21,6 +22,7 @@ Route::post('/updateText', [DataController::class, 'updateText'])->middleware('a
 Route::post('/updateColour', [DataController::class, 'updateColour'])->middleware('auth');
 Route::post('//saveCurrentDataToTextPresets', [DataController::class, 'saveCurrentDataToTextPresets'])->middleware('auth');
 Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent')->middleware('auth');
+Route::post('/setmode', [ModeController::class, 'activateMode'])->name('setMode')->middleware('auth');
 
 Route::get('/get_text', [DataController::class, 'getText']);
 Route::get('/get_colour', [DataController::class, 'getColour']);

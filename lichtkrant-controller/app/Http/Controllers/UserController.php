@@ -43,7 +43,7 @@ class UserController extends Controller
         ]);
 
         $user = Auth::user()->update([
-            'username' => $request->username,
+            'username' => $request->gebruikersnaam,
         ]);
 
         return view('responses.editeduser', ['user' => Auth::user()]);

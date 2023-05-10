@@ -5,7 +5,7 @@
 <p>Huidige Gebruikersnaam: {{ Auth::user()->username }}</p>
 <form method="POST" action="{{ route('editUserName') }}">
     @csrf
-    <label for="username" :value="__('Username')" >Gebruikersnaam</label>
+    <label for="username" :value="__('Gebruikersnaam')" >Gebruikersnaam</label>
     <input id="username"  type="text" name="username" :value="old('username')" required />
     <button type="submit">                    
         {{ __('Wijzig') }}

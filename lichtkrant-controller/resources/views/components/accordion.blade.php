@@ -5,7 +5,7 @@
             @include('components/accordionParts/presets')
         </section>
 
-        <input type="radio" name="accordion" id="cb2" />
+        <input type="radio" name="accordion" id="cb2" checked="checked"/>
         <section class="box">
             @include('components/accordionParts/tekst')
         </section>

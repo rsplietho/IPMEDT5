@@ -76,3 +76,7 @@ button:hover {
         max-width: 300px;
     }
 }
+
+.error {
+    color: #ff544b;
+}

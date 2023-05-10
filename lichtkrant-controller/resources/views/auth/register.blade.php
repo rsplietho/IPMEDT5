@@ -14,6 +14,11 @@
 
 	<div class="container">
 		<h2>Registreer een nieuwe gebruiker</h2>
+		@if($errors->any())
+            @foreach ($errors->all() as $error)
+                <p class="error">{{ $error }}</p>
+            @endforeach
+        @endif
         <form method="POST" action="{{ route('postuser') }}">
 			@csrf
 			<label for="username" :value="__('Name')">Naam</label>

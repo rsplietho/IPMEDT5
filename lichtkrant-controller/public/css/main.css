@@ -12,6 +12,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+a:visited {
+    color: var(--textLight);
+}
+
 body{
     display: grid;
     grid-template-areas: 
@@ -263,4 +267,8 @@ input:checked + section.box .box-title:before {
     .body_login  .container {
         max-width: 300px;
     }
+}
+
+.material-symbols-rounded {
+    vertical-align: bottom;
 }
