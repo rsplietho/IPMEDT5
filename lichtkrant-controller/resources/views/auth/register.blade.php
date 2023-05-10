@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h1>Lichtkrant</h1>
+<h1 class="titel">Lichtkrant</h1>
 
 	<div class="container">
 		<h2>Registreer een nieuwe gebruiker</h2>
@@ -22,7 +22,7 @@
 			<label for="password" :value="__('Username')" >Gebruikersnaam</label>
 			<input id="username"  type="text" name="username" :value="old('username')" required />
             
-            <label for="email" :value="__('Email')">E-mail</label>
+            <label for="email" :value="__('Email')">E-mailadres</label>
 			<input id="email"  type="text" name="email" :value="old('email')" required />
 
             <label for="password" :value="__('Password')">Wachtwoord</label>

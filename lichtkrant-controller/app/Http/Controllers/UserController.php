@@ -29,12 +29,48 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
         ]);
 
-        $user = Auth::user->update([
+        $user = Auth::user()->update([
             'name' => $request->name,
         ]);
 
-        event(new Registered($user));
-
-        return view('responses.createduser', ['user' => $user]);
+        return view('responses.editeduser', ['user' => Auth::user()]);
     }
+
+    public function storeUserName(Request $request)
+    {
+        $request->validate([
+            'username' => 'required|string|max:32|unique:users',
+        ]);
+
+        $user = Auth::user()->update([
+            'username' => $request->username,
+        ]);
+
+        return view('responses.editeduser', ['user' => Auth::user()]);
+    }
+
+    public function storeEmail(Request $request)
+    {
+        $request->validate([
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        $user = Auth::user()->update([
+            'email' => $request->email,
+        ]);
+
+        return view('responses.editeduser', ['user' => Auth::user()]);
+    }
+
+    public function storePassword(Request $request)
+    {
+        $request->validate([
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user = Auth::user()->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return view('responses.editeduser', ['user' => Auth::user()]);    }
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h1>Lichtkrant</h1>
+<h1 class="titel">Lichtkrant</h1>
 
 <form method="POST" action="{{ route('login') }}">
 	<div class="container">

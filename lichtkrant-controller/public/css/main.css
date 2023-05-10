@@ -20,6 +20,7 @@ body{
     "accordion";
     width: 100vw;
     background-color: var(--backround);
+    color: var(--textLight);
 }
 
 nav{

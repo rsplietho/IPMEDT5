@@ -13,10 +13,19 @@
 <h1 class="title">Lichtkrant</h1>
 	<div class="container">
         <h1>Error 403</h1>
-		<h2>Niet geautoriseerd</h2>
-        <a href="{{ route('login')}}">Login</a>
+		<h2>{{ $exception->getMessage() }}</h2>
+        @if (Auth::check())
+            <a class="logout" href={{ route('logout')}} onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Uitloggen</a>
+            <p></p>
+            <a href="{{ route('index')}}">Ga terug</a>
+        @else
+            <a href="{{ route('login')}}">Login</a>
+        @endif
         <img src="http://http.cat/403">
         {{-- {{ $exception->getCode() }} --}}
 	</div>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </body>
 </html>

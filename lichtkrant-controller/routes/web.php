@@ -26,10 +26,18 @@ Route::get('/get_text', [DataController::class, 'getText']);
 Route::get('/get_colour', [DataController::class, 'getColour']);
 
 Route::get('/user', function(){return view('user');})->middleware('auth')->name('user');
+
 Route::get('/user/edit/name', [UserController::class, 'resetName'])->middleware('auth')->name('user.edit.name');
+Route::post('/user/edit/name/submit', [UserController::class, 'storeName'])->middleware('auth')->name('editName');
+
 Route::get('/user/edit/username', [UserController::class, 'resetUserName'])->middleware('auth')->name('user.edit.username');
+Route::post('/user/edit/username/submit', [UserController::class, 'storeUserName'])->middleware('auth')->name('editUserName');
+
 Route::get('/user/edit/email', [UserController::class, 'resetEmail'])->middleware('auth')->name('user.edit.email');
+Route::post('/user/edit/email/submit', [UserController::class, 'storeEmail'])->middleware('auth')->name('editEmail');
+
 Route::get('/user/edit/password', [UserController::class, 'resetPassword'])->middleware('auth')->name('user.edit.password');
+Route::post('/user/edit/password/submit', [UserController::class, 'storePassword'])->middleware('auth')->name('editPassword');
 
 
 require __DIR__.'/auth.php';
