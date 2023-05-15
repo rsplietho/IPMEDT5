@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Current;
 use DateTime;
+use Carbon\Carbon;
 
 class getTime extends Command
 {
@@ -20,7 +21,7 @@ class getTime extends Command
      *
      * @var string
      */
-    protected $description = 'Gets the time from an NTP server';
+    protected $description = 'Gets the time';
 
     /**
      * Execute the console command.
@@ -34,11 +35,10 @@ class getTime extends Command
             return;
         }
 
-        $now = time();
-        $dateTime = new DateTime('@'.$now);
+        $now = Carbon::now('Europe/Amsterdam');
 
         $current = Current::find(1);        
-        $current->text = $dateTime->format('d-m-Y - H:i');;
+        $current->text = $now->format('d-m-Y - H:i');;
         $current->save();
 
         $this->info('Time saved successfully.');

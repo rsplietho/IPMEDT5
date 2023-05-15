@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Wijzig Wachtwoord</h1>
-<form method="POST" action="{{ route('editUserName') }}">
+<form method="POST" action="{{ route('editPassword') }}">
     @csrf
     <label for="password" :value="__('Password')">Wachtwoord</label>
     <input id="password" 

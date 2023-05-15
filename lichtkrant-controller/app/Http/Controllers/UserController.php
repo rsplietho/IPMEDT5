@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
+
 use Auth;
 
 class UserController extends Controller
@@ -43,7 +46,7 @@ class UserController extends Controller
         ]);
 
         $user = Auth::user()->update([
-            'username' => $request->gebruikersnaam,
+            'username' => $request->username,
         ]);
 
         return view('responses.editeduser', ['user' => Auth::user()]);
