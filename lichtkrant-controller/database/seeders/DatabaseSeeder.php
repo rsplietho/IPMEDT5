@@ -35,12 +35,18 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Handmatig'],
             ['name' => 'Quotes'],
             ['name' => 'Temperatuur'],
+            ['name' => 'Tijd'],
         ]);
 
         DB::table('current')->insert([
             'text' => 'Hello World!',
             'colour' => '4AF626',
             'mode' => 1,
+        ]);
+
+        DB::table('weather')->insert([
+            'temperature' => 21,
+            'humidity' => 75,
         ]);
     }
 }

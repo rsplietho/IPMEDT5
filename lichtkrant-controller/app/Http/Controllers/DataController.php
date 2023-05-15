@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Current;
 use Illuminate\Support\Facades\Auth;
 use App\Models\TextPreset;
+use App\Models\Mode;
 
 
 
@@ -38,6 +39,9 @@ class DataController extends Controller
     }
 
     public function updateText(Request $request){
+        if (Current::find(1)->mode != 1) {
+            app('App\Http\Controllers\ModeController')->manualMode();
+        }
         $current = current::find(1);
         $current->text = $request->input('text');
         $current->save();

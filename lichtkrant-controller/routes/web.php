@@ -23,7 +23,7 @@ Route::post('/updateText', [DataController::class, 'updateText'])->middleware('a
 Route::post('/updateColour', [DataController::class, 'updateColour'])->middleware('auth');
 Route::post('//saveCurrentDataToTextPresets', [DataController::class, 'saveCurrentDataToTextPresets'])->middleware('auth');
 Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent')->middleware('auth');
-Route::post('/setmode', [ModeController::class, 'activateMode'])->name('setMode')->middleware('auth');
+Route::post('/setmode', [ModeController::class, 'setMode'])->name('setMode')->middleware('auth');
 
 Route::get('/get_text', [DataController::class, 'getText']);
 Route::get('/get_colour', [DataController::class, 'getColour']);
@@ -44,6 +44,9 @@ Route::post('/user/edit/password/submit', [UserController::class, 'storePassword
 
 Route::post('/weather', [WeatherController::class, 'store']);
 
+Route::get('/get-csrf-token', function() {
+    return response()->json(['csrf_token' => csrf_token()]);
+})->middleware('web');
 
 require __DIR__.'/auth.php';
 

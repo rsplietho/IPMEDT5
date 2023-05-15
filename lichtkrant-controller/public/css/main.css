@@ -5,6 +5,10 @@
     
 }
 
+p {
+    vertical-align: bottom;
+}
+
 * {
     font-family: 'Roboto', sans-serif;
     padding: 0;

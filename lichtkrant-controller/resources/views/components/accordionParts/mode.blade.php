@@ -2,6 +2,7 @@
         <label class="box-close" for="acc-close"></label>
         <div class="box-content">
                 <form method="POST" action="{{ route('setMode') }}">
+                        @csrf
                         <label for="mode">Kies een modus:</label>
                         <select id="mode" name="mode">
                                 @foreach (App\Models\Mode::all() as $mode)

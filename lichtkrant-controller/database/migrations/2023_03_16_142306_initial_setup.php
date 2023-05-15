@@ -78,14 +78,4 @@ class InitialSetup extends Migration
 			$table->softDeletes();
 		});
     }
-
-    private function createWeatherTable() {
-        Schema::create('weather', function(Blueprint $table) {
-			$table->id();
-            $table->string('temperature');
-			$table->string('humidity');
-			$table->timestamps();
-			$table->softDeletes();
-		});
-    }
 }

@@ -18,6 +18,6 @@ class WeatherController extends Controller
         $weather->humidity = $humidity;
         $weather->save();
       
-        return response(200);
+        return response('Success',200);
     }
 }

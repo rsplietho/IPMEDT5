@@ -7,6 +7,7 @@ use App\Models\Current;
 
 class PreviewController extends Controller
 {
+    
     public static function previewText() {
         $text = Current::first()->value('text');
         return $text;
