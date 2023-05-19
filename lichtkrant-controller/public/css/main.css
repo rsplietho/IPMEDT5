@@ -211,7 +211,7 @@ input:checked + section.box .box-title:before {
 .previewButtons > form > button{
     width: 20vw;
     height: 15vw;
-    background-color: var(--backround);
+    background-color: var(--blackDark);
     border: none;
     border-radius: 10px;
     color: var(--textLight);
