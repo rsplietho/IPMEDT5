@@ -118,6 +118,10 @@ class DataController extends Controller
     
     public function updateCurrent($id)
     {
+        if (Current::find(1)->mode != 1) {
+            app('App\Http\Controllers\ModeController')->manualMode();
+        }
+        
         $preset = TextPreset::find($id);
         $current = Current::find(1);
         

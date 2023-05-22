@@ -26,7 +26,7 @@ body{
     "nav"
     "preview"
     "accordion";
-    width: 100vw;
+    width: 100%;
     background-color: var(--backround);
     color: var(--textLight);
 }
@@ -127,7 +127,7 @@ header.box {
     height: 50vh;
     display: none;
     background-color: var(--backround);
-    width: 100vw;
+    width: 100%;
     transition: max-height 0.4s ease-out;
 }
 
