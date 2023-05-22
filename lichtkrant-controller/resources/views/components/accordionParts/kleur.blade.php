@@ -1,6 +1,7 @@
 <label class="box-title" for="cb3">Kleur</label>
         <label class="box-close" for="acc-close"></label>
         <div class="box-content">
+                <h3>Kies een kleur</h3>
                 <form class="colourBox" method="POST" action="/updateColour">
                         @csrf
                         <button type="button" style="background-color: #FF0000;" class="colourButton" onclick="document.getElementById('colour-input').value = this.value;" name="colour" value="FF0000"></button>

@@ -49,7 +49,7 @@ class updateWeather extends Command
         $humidity = $weather->humidity;
 
         $current = Current::find(1);        
-        $current->text = "Temperatuur: {$temperature}°C - Luchtvochtigheid: {$humidity}%";
+        $current->text = "Temperatuur: {$temperature}C - Luchtvochtigheid: {$humidity}%";
         $current->save();
 
         $this->info('Weather updated successfully.');

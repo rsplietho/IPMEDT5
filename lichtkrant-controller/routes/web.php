@@ -21,7 +21,7 @@ use App\Http\Controllers\WeatherController;
 Route::get('/', [DataController::class, 'index'])->middleware('auth')->name('index');
 Route::post('/updateText', [DataController::class, 'updateText'])->middleware('auth');
 Route::post('/updateColour', [DataController::class, 'updateColour'])->middleware('auth');
-Route::post('//saveCurrentDataToTextPresets', [DataController::class, 'saveCurrentDataToTextPresets'])->middleware('auth');
+Route::post('/saveCurrentDataToTextPresets', [DataController::class, 'saveCurrentDataToTextPresets'])->middleware('auth');
 Route::post('/update-current/{id}', [DataController::class, 'updateCurrent'])->name('updateCurrent')->middleware('auth');
 Route::post('/setmode', [ModeController::class, 'setMode'])->name('setMode')->middleware('auth');
 
@@ -43,10 +43,6 @@ Route::get('/user/edit/password', [UserController::class, 'resetPassword'])->mid
 Route::post('/user/edit/password/submit', [UserController::class, 'storePassword'])->middleware('auth')->name('editPassword');
 
 Route::post('/weather', [WeatherController::class, 'store']);
-
-Route::get('/get-csrf-token', function() {
-    return response()->json(['csrf_token' => csrf_token()]);
-})->middleware('web');
 
 require __DIR__.'/auth.php';
 

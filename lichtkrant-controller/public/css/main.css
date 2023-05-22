@@ -78,7 +78,7 @@ input[type="radio"]{
     width: 5em;
     height: 5em;
     border: none;
-    border-radius: 10px;
+    border-radius: .5em;
 }
 
 .colour-input {
@@ -98,8 +98,7 @@ input[type="radio"]{
 .box {
     position: relative;
     background: white;
-
-    transition: all .15s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .box::before {
@@ -129,10 +128,12 @@ header.box {
     display: none;
     background-color: var(--backround);
     width: 100vw;
+    transition: max-height 0.4s ease-out;
 }
 
 input:checked + .box .box-content {
     display: inline-block;
+
 }
 
 
@@ -150,19 +151,6 @@ input:checked + .box .box-content {
 }
 input:checked + section.box .box-title:before {
     transform: rotate(90deg);
-}
-
-.presetButton{
-    background-color: var(--blackDark);
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 5px;
-    width: 80vw;
-}
-
-.presetButton:hover{
-    cursor: pointer;
 }
 
 .textForm{
@@ -185,7 +173,7 @@ input:checked + section.box .box-title:before {
     height: 10vw;
     background-color: var(--blackDark);
     border: none;
-    border-radius: 10px;
+    border-radius: .5em;
     color: var(--textLight);
 }
 
@@ -208,13 +196,33 @@ input:checked + section.box .box-title:before {
     grid-template-columns: 25vw 25vw 25vw 25vw;
 }
 
+.presetButton{
+    background-color: var(--blackDark);
+    border: none;
+    border-radius: .5em;
+    padding: 15px;
+    margin: 5px;
+    width: 80vw;
+}
+
+.presetButton:hover{
+    cursor: pointer;
+}
+
+
 .previewButtons > form > button{
     width: 20vw;
     height: 15vw;
-    background-color: var(--backround);
-    border: none;
-    border-radius: 10px;
+    margin: 1em 0;
+    background-color: var(--blackDark);
+    border: 10px;
+    border-color: var(--blackDark);
+    border-radius: .5em;
     color: var(--textLight);
+}
+
+.previewButtons > form > button:hover {
+    background-color: gray;
 }
 
 /* login styling */
@@ -275,4 +283,10 @@ input:checked + section.box .box-title:before {
 
 .material-symbols-rounded {
     vertical-align: bottom;
+}
+
+.userpage > .button, .userPanel > .button, .adminPanel > .button {
+    vertical-align: middle;
+    margin: 12,5% 0;
+    width: 70%;
 }

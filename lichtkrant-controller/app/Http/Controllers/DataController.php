@@ -13,6 +13,11 @@ use App\Models\Mode;
 
 class DataController extends Controller
 {
+    public function index(){
+        $textPresets = DB::table('textPresets')->get();
+        return view('index', ['textPresets' => $textPresets]);
+    }
+    
     public function getText() {
         $data = DB::table('current')->pluck('text')->implode(',');
         return $data;
@@ -28,14 +33,6 @@ class DataController extends Controller
         $b5 = $b >> 3;
         $rgb565 = ($r5 << 11) | ($g6 << 5) | $b5;
         return '0x'.sprintf('%04X', $rgb565);
-    }
-    
-    
-    
-    
-    public function index(){
-        $textPresets = DB::table('textPresets')->get();
-        return view('index', ['textPresets' => $textPresets]);
     }
 
     public function updateText(Request $request){

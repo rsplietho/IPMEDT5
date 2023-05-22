@@ -35,6 +35,7 @@ label {
     background-color: #15616D;
     color: #fff;
     padding: 1em 2em;
+    margin: 1em 0;
     border: none;
     border-radius: .5em;
     cursor: pointer;
@@ -66,7 +67,7 @@ button {
     cursor: pointer;
     width: 100%;
 }
-button:hover {
+button:hover, .button:hover {
     background-color: white;
     color: #15616D;
     outline: 2px solid #15616D;

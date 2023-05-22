@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="userpage">
-    <a class=button href="{{ route('index')}}">Ga terug</a>
+    <a class=button href="{{ route('index')}}"><span class="material-symbols-rounded">arrow_back_ios_new</span> Ga terug</a>
     <link href="{{ asset('css/user.css') }}" rel="stylesheet">
     @include('components/usercomponent')
     @if (Auth::user()->isAdmin())
