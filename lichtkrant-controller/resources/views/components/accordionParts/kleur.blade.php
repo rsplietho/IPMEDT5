@@ -14,6 +14,6 @@
                         <button onclick="document.getElementById('colourpicker').click(); return false;">Pick a color</button> -->
                         <label for="colour-input" class="colourlabel">Hex-kleur:</label>
                         <input type="text" id="colour-input" class="colour-input" name="colour" value="" required>
-                        <button type="submit" class="coloursubmit">Save</button>
+                        <button type="submit" class="coloursubmit">Opslaan</button>
                 </form>
         </div>

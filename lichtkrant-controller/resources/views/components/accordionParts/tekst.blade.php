@@ -5,7 +5,7 @@
     <form class="textForm" method="POST" action="/updateText">
         @csrf
         <input class="saveInput" type="text" name="text">
-        <button type="submit">Save</button>
+        <button type="submit">Opslaan</button>
     </form>
     <br>
 

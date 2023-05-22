@@ -13,5 +13,5 @@
                                                 >{{$mode->name}}</option>
                                 @endforeach
                         </select>
-                        <button type="submit" class="coloursubmit">Save</button>
+                        <button type="submit" class="coloursubmit">Opslaan</button>
         </div>
