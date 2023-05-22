@@ -67,10 +67,10 @@ input[type="radio"]{
 
 .colourBox{
     padding-top: 20px;
-    padding-left: 15.5%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 70%;
+    padding-left: 20%;
     gap: 3%;
 }
 
@@ -127,7 +127,7 @@ header.box {
     height: 50vh;
     display: none;
     background-color: var(--backround);
-    width: 100%;
+    width: 100vw;
     transition: max-height 0.4s ease-out;
 }
 
@@ -168,9 +168,8 @@ input:checked + section.box .box-title:before {
 
 .textForm > button{
     margin-top: 20px;
-    width: 20%;
-    margin-left: 30%;
-    height: 10vw;
+    width: 100%;
+    height: 200%;
     background-color: var(--blackDark);
     border: none;
     border-radius: .5em;
@@ -194,6 +193,7 @@ input:checked + section.box .box-title:before {
     grid-area: buttons;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 10%;
 }
 
 .presetButton{
@@ -202,7 +202,7 @@ input:checked + section.box .box-title:before {
     border-radius: .5em;
     padding: 15px;
     margin: 5px;
-    width: 80vw;
+    width: 100%;
 }
 
 .presetButton:hover{
@@ -211,8 +211,8 @@ input:checked + section.box .box-title:before {
 
 
 .previewButtons > form > button{
-    width: 20vw;
-    height: 15vw;
+    width: 80%;
+    height: 150%;
     margin: 1em 0;
     background-color: var(--blackDark);
     border: 10px;
@@ -275,9 +275,13 @@ input:checked + section.box .box-title:before {
     color: #15616D;
     outline: 2px solid #15616D;
 }
-@media only screen and (max-width: 600px) {
+@media (orientation: landscape) {
     .body_login  .container {
         max-width: 300px;
+    }
+
+    .box, .box-content{
+        width: 40vw;
     }
 }
 
