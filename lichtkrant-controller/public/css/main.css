@@ -67,11 +67,11 @@ input[type="radio"]{
 
 .colourBox{
     padding-top: 20px;
-    padding-left: 15.5vw;
+    padding-left: 15.5%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 69vw;
-    gap: 3vw
+    width: 70%;
+    gap: 3%;
 }
 
 .colourButton{
@@ -138,7 +138,7 @@ input:checked + .box .box-content {
 
 
 .box-title {
-    width: 100vw;
+    width: 100%;
 }
 .arrows section .box-title:before {
     position: absolute;
@@ -156,8 +156,8 @@ input:checked + section.box .box-title:before {
 .textForm{
     margin-top: 20px;
     display: grid;
-    width: 80vw;
-    padding-left: 10vw;
+    width: 80%;
+    padding-left: 10%;
 }
 
 .textForm > input{
@@ -168,8 +168,8 @@ input:checked + section.box .box-title:before {
 
 .textForm > button{
     margin-top: 20px;
-    width: 20vw;
-    margin-left: 30vw;
+    width: 20%;
+    margin-left: 30%;
     height: 10vw;
     background-color: var(--blackDark);
     border: none;
@@ -193,7 +193,7 @@ input:checked + section.box .box-title:before {
 .previewButtons{
     grid-area: buttons;
     display: grid;
-    grid-template-columns: 25vw 25vw 25vw 25vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .presetButton{
