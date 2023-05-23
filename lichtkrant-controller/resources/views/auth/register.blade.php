@@ -1,94 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register Page</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-            background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701862770.jpg");
-		}
-		.container {
-			margin: 0 auto;
-			max-width: 400px;
-			padding: 20px;
-			background-color: #fff;
-			border-radius: 5px;
-			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
-		}
-		h2 {
-			text-align: center;
-			color: #333;
-		}
-        h1 {
-			text-align: center;
-			color: white;
-            text-shadow: 2px 2px black;
-		}
-		label {
-			display: block;
-			margin-bottom: 5px;
-			color: #666;
-		}
-		input[type=text], input[type=password] {
-			width: 100%;
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			margin-bottom: 15px;
-			box-sizing: border-box;
-		}
-		button {
-			background-color: #15616D;
-			color: #fff;
-			padding: 10px 15px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			width: 100%;
-		}
-		button:hover {
-			background-color: white;
-            color: #15616D;
-            border: 2px solid #15616D;
-		}
-		@media only screen and (max-width: 600px) {
-			.container {
-				max-width: 300px;
-			}
-		}
-	</style>
+	<style>@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');</style>
+	<link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+	<title>Lichtkrant</title>
 </head>
 <body>
 
-<h1>Lichtkrant</h1>
+<h1 class="titel">Lichtkrant</h1>
 
 	<div class="container">
-		<h2>Register</h2>
-        <form method="POST" action="{{ route('register') }}">
+		<h2>Registreer een nieuwe gebruiker</h2>
+		@if($errors->any())
+            @foreach ($errors->all() as $error)
+                <p class="error">{{ $error }}</p>
+            @endforeach
+        @endif
+        <form method="POST" action="{{ route('postuser') }}">
 			@csrf
-			<label for="username" :value="__('Name')">Name</label>
+			<label for="username" :value="__('Name')">Naam</label>
 			<input id="name"  type="text" name="name" :value="old('name')" required autofocus />
 
-			<label for="password" :value="__('Username')" >Username</label>
+			<label for="password" :value="__('Username')" >Gebruikersnaam</label>
 			<input id="username"  type="text" name="username" :value="old('username')" required />
             
-            <label for="email" :value="__('Email')">E-mail</label>
+            <label for="email" :value="__('Email')">E-mailadres</label>
 			<input id="email"  type="text" name="email" :value="old('email')" required />
 
-            <label for="password" :value="__('Password')">Password</label>
+            <label for="password" :value="__('Password')">Wachtwoord</label>
 			<input id="password" 
 			type="password"
 			name="password"
 			required autocomplete="new-password" />
 
-			<label for="password" :value="__('Password')">Password confirmation</label>
+			<label for="password" :value="__('Password')">Herhaal wachtwoord</label>
 			<input id="password_confirmation" 
 			type="password"
 			name="password_confirmation" required />
 
 			<button type="submit">                    
-				{{ __('Register') }}
+				{{ __('Registreer') }}
 			</button>
 		</form>
 	</div>

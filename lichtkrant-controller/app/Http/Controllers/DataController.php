@@ -7,11 +7,17 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Current;
 use Illuminate\Support\Facades\Auth;
 use App\Models\TextPreset;
+use App\Models\Mode;
 
 
 
 class DataController extends Controller
 {
+    public function index(){
+        $textPresets = DB::table('textPresets')->get();
+        return view('index', ['textPresets' => $textPresets]);
+    }
+    
     public function getText() {
         $data = DB::table('current')->pluck('text')->implode(',');
         return $data;
@@ -28,16 +34,11 @@ class DataController extends Controller
         $rgb565 = ($r5 << 11) | ($g6 << 5) | $b5;
         return '0x'.sprintf('%04X', $rgb565);
     }
-    
-    
-    
-    
-    public function index(){
-        $textPresets = DB::table('textPresets')->get();
-        return view('index', ['textPresets' => $textPresets]);
-    }
 
     public function updateText(Request $request){
+        if (Current::find(1)->mode != 1) {
+            app('App\Http\Controllers\ModeController')->manualMode();
+        }
         $current = current::find(1);
         $current->text = $request->input('text');
         $current->save();
@@ -117,6 +118,10 @@ class DataController extends Controller
     
     public function updateCurrent($id)
     {
+        if (Current::find(1)->mode != 1) {
+            app('App\Http\Controllers\ModeController')->manualMode();
+        }
+        
         $preset = TextPreset::find($id);
         $current = Current::find(1);
         

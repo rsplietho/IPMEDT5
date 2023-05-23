@@ -7,46 +7,35 @@ body {
     max-width: 400px;
     padding: 20px;
     background-color: #fff;
-    border-radius: .5em;
+    border-radius: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 h2 {
     text-align: center;
     color: #333;
 }
-.title {
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px black;
-}
+
 .container > h1 {
     text-align: center;
     color: #333;
 }
-img {
-    max-height:100%; 
-    max-width:100%;
-    /* padding-top: 1em; */
-    margin-top: 1em;
-    border-radius: .5em;
+
+body > h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 label {
     display: block;
     margin-bottom: 5px;
     color: #666;
 }
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-}
-a {
+
+.button {
     background-color: #15616D;
     color: #fff;
     padding: 1em 2em;
+    margin: 1em 0;
     border: none;
     border-radius: .5em;
     cursor: pointer;
@@ -55,10 +44,33 @@ a {
     text-align: center;
     display: block;
 }
-button:hover {
+
+a {
+    margin-bottom: 1em;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+button {
+    font-size: 16px;
+    background-color: #15616D;
+    color: #fff;
+    padding: 1em 2em;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover, .button:hover {
     background-color: white;
     color: #15616D;
-    border: 2px solid #15616D;
+    outline: 2px solid #15616D;
 }
 @media only screen and (max-width: 600px) {
     .container {
@@ -66,6 +78,6 @@ button:hover {
     }
 }
 
-.logout {
-    background-color: #ff544b;
+.error {
+    color: #ff544b;
 }

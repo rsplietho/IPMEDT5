@@ -28,11 +28,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        $request->authenticate();
+        if ($request->authenticate()) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
+ 
+        return back()->withErrors([
+            'gegevens' => 'Deze gegevens komen niet overeen met ons bestand.',
+        ]);
 
-        $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        
     }
 
     /**
