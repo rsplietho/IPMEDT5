@@ -294,3 +294,7 @@ input:checked + section.box .box-title:before {
     margin: 12,5% 0;
     width: 70%;
 }
+
+button:hover, .box-title:hover{
+    cursor: pointer;
+}
