@@ -202,7 +202,7 @@ input:checked + section.box .box-title:before {
     border-radius: .5em;
     padding: 15px;
     margin: 5px;
-    width: 100%;
+    width: 80%;
 }
 
 .presetButton:hover{
